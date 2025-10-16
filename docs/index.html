@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta.title">Factorial Finance | Plataforma de Compliance Fiscal para Portugal</title>
+    <title data-i18n="meta.title">Factorial Finance | Plataforma de Compliance Fiscal para Europa</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -224,7 +224,7 @@
         /* Dark Mode Toggle */
         .dark-mode-toggle {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             right: 20px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.1);
@@ -291,31 +291,6 @@
     <script src="i18n.js"></script>
 </head>
 <body class="bg-gray-50">
-    <!-- Language and Country Switchers -->
-    <div style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; gap: 10px; flex-wrap: wrap;">
-        <div>
-            <label for="countrySwitcher" data-i18n="country.label" style="margin-right: 8px; background: rgba(255,255,255,0.6); padding: 6px 10px; border-radius: 8px;">País</label>
-            <select id="countrySwitcher" style="padding: 6px 10px; border-radius: 8px;">
-                <option value="PT">🇵🇹 Portugal</option>
-                <option value="ES">🇪🇸 España</option>
-                <option value="FR">🇫🇷 France</option>
-                <option value="DE">🇩🇪 Deutschland</option>
-                <option value="IT">🇮🇹 Italia</option>
-            </select>
-        </div>
-        <div>
-        <label for="langSwitcher" data-i18n="lang.label" style="margin-right: 8px; background: rgba(255,255,255,0.6); padding: 6px 10px; border-radius: 8px;">Idioma</label>
-        <select id="langSwitcher" style="padding: 6px 10px; border-radius: 8px;">
-            <option value="pt-PT">Português (PT)</option>
-            <option value="pt-BR">Português (BR)</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="it">Italiano</option>
-        </select>
-        </div>
-    </div>
     <!-- Dark Mode Toggle -->
     <div class="dark-mode-toggle" onclick="toggleDarkMode()">
         <span id="dark-mode-icon">🌙</span>
@@ -339,7 +314,7 @@
                     <span class="text-5xl">💰</span>
                 </div>
                 <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent" data-i18n="hero.title">
-                    Factorial Finance em Portugal!🚀
+                    Factorial Finance!🚀
                 </h1>
                 <p class="text-2xl md:text-3xl text-pink-200 animate-fade-in-delay font-medium">
                     Soluções para Mitigação de Riscos Fiscais e Laborais
@@ -813,7 +788,7 @@
                     <span class="text-gray-800">Mais Comuns?</span>
                 </h2>
                 <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                    E quais são as penalizações do sistema fiscal português? Vamos ver!
+                    E quais são as penalizações do sistema fiscal europeu? Vamos ver!
                 </p>
             </div>
             
@@ -824,7 +799,7 @@
 
             <!-- Taxas de IVA Regionais - Dynamic based on country -->
             <div class="bg-white rounded-2xl p-8 shadow-xl mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-i18n="compliance.vat_rates.title">Taxas de IVA por Região Portuguesa (2025)</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-i18n="compliance.vat_rates.title">Taxas de IVA por Região Europeia (2025)</h3>
                 <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 text-center">
                     <p class="text-green-800 font-semibold">✅ Resultado: Conformidade total, risco fiscal eliminado e eficiência documental comprovada.</p>
                 </div>
@@ -844,7 +819,7 @@
                     </table>
                 </div>
                 <p class="text-sm text-gray-600 mt-4 text-center">
-                    A Factorial aplica automaticamente as taxas corretas por região, garantindo conformidade total com o CIVA
+                    A Factorial aplica automaticamente as taxas corretas por região, garantindo conformidade total com as regulamentações europeias
                 </p>
             </div>
 
@@ -889,10 +864,10 @@
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">
                     <span style="color: #3B82F6;">🔗 INTEGRAÇÕES</span>
                     <br>
-                    <span class="text-gray-800">COM ECOSSISTEMA PORTUGUÊS</span>
+                    <span class="text-gray-800">COM ECOSSISTEMA EUROPEU</span>
                 </h2>
                 <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                    Conecte-se com as principais ferramentas de contabilidade e gestão de RH do mercado português
+                    Conecte-se com as principais ferramentas de contabilidade e gestão de RH do mercado europeu
                 </p>
             </div>
             
@@ -1160,7 +1135,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-10">
                 <h3 class="text-3xl font-semibold text-gray-900 mb-2">Empresas que confiam na Factorial</h3>
-                <p class="text-gray-600">Conformidade total com a Autoridade Tributária | GDPR | SAFT-PT</p>
+                <p class="text-gray-600">Conformidade total com regulamentações europeias | GDPR</p>
                 </div>
                 
             <!-- Logos Row -->
@@ -1247,10 +1222,9 @@
             <div class="text-center">
                 <h3 class="text-2xl font-bold mb-4">
                     <span style="color: #FF355E;">Factorial Finance</span>
-                    <span style="color: #B91C3C;"> Portugal</span>
                 </h3>
                 <p class="mb-4 text-lg" style="color: #7F1D1D;">
-                    Simplificamos a conformidade fiscal e laboral para empresas portuguesas.
+                    Simplificamos a conformidade fiscal e laboral para empresas europeias.
                 </p>
                 <p class="mb-8 text-base" style="color: #991B1B;">
                     Mitigação de riscos, automação documental e contabilidade analítica integrada.
@@ -1259,7 +1233,7 @@
                     © 2025 Factorial RH — Todos os direitos reservados.
                 </p>
                 <p class="text-xs" style="color: #9CA3AF;">
-                    Em conformidade com a legislação portuguesa, GDPR
+                    Em conformidade com a GDPR
                 </p>
             </div>
         </div>

@@ -15,7 +15,7 @@
   // Dicionários completos para cada idioma
   const dictionaries = {
     "pt-PT": {
-      "hero.title": "Factorial Finance em Portugal!",
+      "hero.title": "Factorial Finance!",
       "lang.label": "Idioma",
       "country.label": "País",
       "lang.pt-BR": "Português (BR)",
@@ -30,7 +30,7 @@
       "country.FR": "França",
       "country.DE": "Alemanha",
       "country.IT": "Itália",
-      "meta.title": "Factorial Finance | Plataforma de Compliance Fiscal para Portugal",
+      "meta.title": "Factorial Finance | Plataforma de Compliance Fiscal para Europa",
       "nav.brand": "Factorial Finance",
       "nav.home": "Home",
       "nav.bundles": "Bundles",
@@ -41,7 +41,7 @@
       "nav.demo": "Agendar Demo",
       "mobile.menu": "Menu",
       "hero.calculate": "🧮 Calcular Economia",
-      "hero.case": "▶️ Case de Sucesso em Portugal",
+      "hero.case": "▶️ Case de Sucesso",
       "section1.title": "Como a Factorial apoia na Mitigação de Riscos Fiscais e Laborais",
       "section1.subtitle": "Elimine o risco de Tributação Autónoma e otimize a gestão financeira em minutos!",
       "feature1.title": "Gestão de Projetos",
@@ -119,14 +119,14 @@
       "contact.description": "Como? Libertamos profissionais de tarefas burocráticas para que possam dedicar mais tempo a apoiar as suas equipas e criar uma cultura empresarial forte e envolvente.",
       "contact.back_to_top": "⬆️ Voltar ao Início",
       "contact.schedule_demo": "📞 Demonstração Personalizada",
-      "footer.title": "Factorial Finance Portugal",
-      "footer.description": "Simplificamos a conformidade fiscal e laboral para empresas portuguesas.",
+      "footer.title": "Factorial Finance",
+      "footer.description": "Simplificamos a conformidade fiscal e laboral para empresas europeias.",
       "footer.subdescription": "Mitigação de riscos, automação documental e contabilidade analítica integrada.",
       "footer.copyright": "© 2025 Factorial RH — Todos os direitos reservados.",
-      "footer.compliance": "Em conformidade com a legislação portuguesa, GDPR"
+      "footer.compliance": "Em conformidade com a GDPR"
     },
     "en": {
-      "hero.title": "Factorial Finance in Europe!",
+      "hero.title": "Factorial Finance!",
       "lang.label": "Language",
       "country.label": "Country",
       "lang.pt-BR": "Portuguese (BR)",
@@ -230,11 +230,11 @@
       "contact.description": "How? We free professionals from bureaucratic tasks so they can dedicate more time to supporting their teams and creating a strong and engaging corporate culture.",
       "contact.back_to_top": "⬆️ Back to Top",
       "contact.schedule_demo": "📞 Personalized Demo",
-      "footer.title": "Factorial Finance Europe",
+      "footer.title": "Factorial Finance",
       "footer.description": "We simplify fiscal and labor compliance for European companies.",
       "footer.subdescription": "Risk mitigation, document automation and integrated analytical accounting.",
       "footer.copyright": "© 2025 Factorial HR — All rights reserved.",
-      "footer.compliance": "In compliance with European legislation, GDPR"
+      "footer.compliance": "In compliance with GDPR"
     },
     "es": {
       "hero.title": "¡Factorial Finance en España!",
@@ -341,14 +341,14 @@
       "contact.description": "¿Cómo? Liberamos a los profesionales de tareas burocráticas para que puedan dedicar más tiempo a apoyar a sus equipos y crear una cultura empresarial fuerte y atractiva.",
       "contact.back_to_top": "⬆️ Volver al Inicio",
       "contact.schedule_demo": "📞 Demo Personalizada",
-      "footer.title": "Factorial Finance España",
-      "footer.description": "Simplificamos el cumplimiento fiscal y laboral para empresas españolas.",
+      "footer.title": "Factorial Finance",
+      "footer.description": "Simplificamos el cumplimiento fiscal y laboral para empresas europeas.",
       "footer.subdescription": "Mitigación de riesgos, automatización documental y contabilidad analítica integrada.",
       "footer.copyright": "© 2025 Factorial RRHH — Todos los derechos reservados.",
-      "footer.compliance": "En cumplimiento con la legislación española, GDPR"
+      "footer.compliance": "En cumplimiento con GDPR"
     },
     "fr": {
-      "hero.title": "Factorial Finance en France !",
+      "hero.title": "Factorial Finance!",
       "lang.label": "Langue",
       "country.label": "Pays",
       "lang.pt-BR": "Portugais (BR)",
@@ -452,14 +452,14 @@
       "contact.description": "Comment ? Nous libérons les professionnels des tâches bureaucratiques pour qu'ils puissent consacrer plus de temps à soutenir leurs équipes et créer une culture d'entreprise forte et engageante.",
       "contact.back_to_top": "⬆️ Retour en Haut",
       "contact.schedule_demo": "📞 Démo Personnalisée",
-      "footer.title": "Factorial Finance France",
-      "footer.description": "Nous simplifions la conformité fiscale et du travail pour les entreprises françaises.",
+      "footer.title": "Factorial Finance",
+      "footer.description": "Nous simplifions la conformité fiscale et du travail pour les entreprises européennes.",
       "footer.subdescription": "Mitigation des risques, automatisation documentaire et comptabilité analytique intégrée.",
       "footer.copyright": "© 2025 Factorial RH — Tous droits réservés.",
-      "footer.compliance": "En conformité avec la législation française, GDPR"
+      "footer.compliance": "En conformité avec GDPR"
     },
     "de": {
-      "hero.title": "Factorial Finance in Deutschland!",
+      "hero.title": "Factorial Finance!",
       "lang.label": "Sprache",
       "country.label": "Land",
       "lang.pt-BR": "Portugiesisch (BR)",
@@ -563,14 +563,14 @@
       "contact.description": "Wie? Wir befreien Fachkräfte von bürokratischen Aufgaben, damit sie mehr Zeit für die Unterstützung ihrer Teams und die Schaffung einer starken und ansprechenden Unternehmenskultur haben.",
       "contact.back_to_top": "⬆️ Nach Oben",
       "contact.schedule_demo": "📞 Personalisierte Demo",
-      "footer.title": "Factorial Finance Deutschland",
-      "footer.description": "Wir vereinfachen die Steuer- und Arbeitscompliance für deutsche Unternehmen.",
+      "footer.title": "Factorial Finance",
+      "footer.description": "Wir vereinfachen die Steuer- und Arbeitscompliance für europäische Unternehmen.",
       "footer.subdescription": "Risikominderung, Dokumentenautomatisierung und integrierte analytische Buchhaltung.",
       "footer.copyright": "© 2025 Factorial HR — Alle Rechte vorbehalten.",
-      "footer.compliance": "In Übereinstimmung mit deutscher Gesetzgebung, GDPR"
+      "footer.compliance": "In Übereinstimmung mit GDPR"
     },
     "it": {
-      "hero.title": "Factorial Finance in Italia!",
+      "hero.title": "Factorial Finance!",
       "lang.label": "Lingua",
       "country.label": "Paese",
       "lang.pt-BR": "Portoghese (BR)",
@@ -674,11 +674,11 @@
       "contact.description": "Come? Liberiamo i professionisti dai compiti burocratici in modo che possano dedicare più tempo a supportare i loro team e creare una cultura aziendale forte e coinvolgente.",
       "contact.back_to_top": "⬆️ Torna in Cima",
       "contact.schedule_demo": "📞 Demo Personalizzata",
-      "footer.title": "Factorial Finance Italia",
-      "footer.description": "Semplifichiamo la conformità fiscale e del lavoro per le aziende italiane.",
+      "footer.title": "Factorial Finance",
+      "footer.description": "Semplifichiamo la conformità fiscale e del lavoro per le aziende europee.",
       "footer.subdescription": "Mitigazione dei rischi, automazione documentale e contabilità analitica integrata.",
       "footer.copyright": "© 2025 Factorial HR — Tutti i diritti riservati.",
-      "footer.compliance": "In conformità con la legislazione italiana, GDPR"
+      "footer.compliance": "In conformità con GDPR"
     }
   };
 
