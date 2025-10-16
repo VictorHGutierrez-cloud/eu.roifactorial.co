@@ -145,8 +145,13 @@ Um site interativo multilíngue projetado para demonstrar os bundles de Operaç�
 
 ```
 Site MultiLinguas ROI FINANCE/
-├── index.html                 # Página principal
-├── i18n/                      # Arquivos de tradução
+├── docs/                      # 📚 Documentação completa
+│   ├── README.md              # Índice da documentação
+│   ├── COMO_USAR_TRADUCAO.md  # Guia do sistema de tradução
+│   └── GITHUB_DEPLOYMENT.md   # Guia de deploy
+├── indexfinalcopy.html        # 🏠 Site principal (versão final)
+├── test-translation.html      # 🧪 Página de teste
+├── i18n/                      # 🌍 Arquivos de tradução
 │   ├── pt-BR.json            # Português Brasil
 │   ├── pt-PT.json            # Português Portugal
 │   ├── en.json               # English
@@ -154,15 +159,23 @@ Site MultiLinguas ROI FINANCE/
 │   ├── fr.json               # Français
 │   ├── de.json               # Deutsch
 │   └── it.json               # Italiano
-├── i18n.js                   # Sistema de tradução
+├── i18n.js                   # ⚙️ Sistema de tradução universal
 ├── auto-translate.js         # Tradução automática
 ├── advanced-features.js      # Recursos avançados
 ├── enhanced-styles.css       # Estilos aprimorados
 ├── images/logos/             # Logos das empresas
 ├── auto-commit.bat           # Script de commit automático (Windows)
 ├── auto-commit.ps1           # Script de commit automático (PowerShell)
-└── README.md
+└── README.md                 # Este arquivo
 ```
+
+## 📚 Documentação
+
+Para informações detalhadas sobre o sistema, consulte a pasta `docs/`:
+
+- **[📖 Documentação Completa](docs/README.md)** - Índice geral da documentação
+- **[🌍 Sistema de Tradução](docs/COMO_USAR_TRADUCAO.md)** - Guia completo do sistema multilíngue
+- **[🚀 Deploy no GitHub](docs/GITHUB_DEPLOYMENT.md)** - Instruções para publicação
 
 ## 🔧 Automação Git
 
