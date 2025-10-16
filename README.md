@@ -1,8 +1,17 @@
-# 🎯 Bundle Demo Site
+# 🌍 Site MultiLinguas ROI FINANCE
 
 ## Project Overview
 
-An interactive website designed to demonstrate Factorial's Operations bundles to Portuguese clients. This site showcases how to present complex SaaS products in a simple, engaging way that drives conversions.
+Um site interativo multilíngue projetado para demonstrar os bundles de Operações da Factorial para clientes em múltiplos idiomas. Este site mostra como apresentar produtos SaaS complexos de forma simples e envolvente que gera conversões.
+
+**🌐 Idiomas Suportados:**
+- 🇧🇷 Português (Brasil)
+- 🇵🇹 Português (Portugal) 
+- 🇺🇸 English
+- 🇪🇸 Español
+- 🇫🇷 Français
+- 🇩🇪 Deutsch
+- 🇮🇹 Italiano
 
 ## 🎯 Purpose
 
@@ -135,25 +144,64 @@ An interactive website designed to demonstrate Factorial's Operations bundles to
 ## 📁 File Structure
 
 ```
-01_Bundle_Demo_Site/
-├── index.html                 # Homepage
-├── bundles/
-│   ├── financial-starter.html
-│   ├── project-controller.html
-│   ├── operations-command.html
-│   └── finance-pro.html
-├── calculator/
-│   └── roi-calculator.html
-├── stories/
-│   └── success-stories.html
-├── assets/
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── data/
-│   └── bundles.json
+Site MultiLinguas ROI FINANCE/
+├── index.html                 # Página principal
+├── i18n/                      # Arquivos de tradução
+│   ├── pt-BR.json            # Português Brasil
+│   ├── pt-PT.json            # Português Portugal
+│   ├── en.json               # English
+│   ├── es.json               # Español
+│   ├── fr.json               # Français
+│   ├── de.json               # Deutsch
+│   └── it.json               # Italiano
+├── i18n.js                   # Sistema de tradução
+├── auto-translate.js         # Tradução automática
+├── advanced-features.js      # Recursos avançados
+├── enhanced-styles.css       # Estilos aprimorados
+├── images/logos/             # Logos das empresas
+├── auto-commit.bat           # Script de commit automático (Windows)
+├── auto-commit.ps1           # Script de commit automático (PowerShell)
 └── README.md
 ```
+
+## 🔧 Automação Git
+
+### Scripts de Commit Automático
+
+O projeto inclui scripts para automatizar commits:
+
+**Para Windows (Batch):**
+```cmd
+auto-commit.bat
+```
+
+**Para PowerShell:**
+```powershell
+.\auto-commit.ps1 "Sua mensagem de commit"
+```
+
+### Como Usar
+
+1. **Commit Automático Simples:**
+   - Execute `auto-commit.bat` no Windows
+   - Todos os arquivos serão adicionados, commitados e enviados automaticamente
+
+2. **Commit com Mensagem Personalizada:**
+   - Execute `.\auto-commit.ps1 "Sua mensagem aqui"`
+   - Substitua "Sua mensagem aqui" pela descrição das mudanças
+
+3. **Verificar Status:**
+   ```cmd
+   git status
+   ```
+
+### Configuração Inicial
+
+O repositório já está configurado com:
+- ✅ Branch `main` criado
+- ✅ Remote origin configurado
+- ✅ Todos os arquivos enviados
+- ✅ Scripts de automação prontos
 
 ## 🚀 Development Phases
 
