@@ -145,34 +145,36 @@ Um site interativo multilíngue projetado para demonstrar os bundles de Operaç�
 
 ```
 Site MultiLinguas ROI FINANCE/
-├── docs/                      # 📚 Documentação completa
+├── docs/                      # 📚 Site completo e documentação
 │   ├── README.md              # Índice da documentação
 │   ├── COMO_USAR_TRADUCAO.md  # Guia do sistema de tradução
-│   └── GITHUB_DEPLOYMENT.md   # Guia de deploy
-├── indexfinalcopy.html        # 🏠 Site principal (versão final)
-├── test-translation.html      # 🧪 Página de teste
-├── i18n/                      # 🌍 Arquivos de tradução
-│   ├── pt-BR.json            # Português Brasil
-│   ├── pt-PT.json            # Português Portugal
-│   ├── en.json               # English
-│   ├── es.json               # Español
-│   ├── fr.json               # Français
-│   ├── de.json               # Deutsch
-│   └── it.json               # Italiano
-├── i18n.js                   # ⚙️ Sistema de tradução universal
-├── auto-translate.js         # Tradução automática
-├── advanced-features.js      # Recursos avançados
-├── enhanced-styles.css       # Estilos aprimorados
-├── images/logos/             # Logos das empresas
+│   ├── GITHUB_DEPLOYMENT.md   # Guia de deploy
+│   ├── indexfinalcopy.html    # 🏠 Site principal (versão final)
+│   ├── test-translation.html  # 🧪 Página de teste
+│   ├── i18n.js                # ⚙️ Sistema de tradução universal
+│   ├── auto-translate.js      # Tradução automática
+│   ├── i18n/                  # 🌍 Arquivos de tradução
+│   │   ├── pt-BR.json        # Português Brasil
+│   │   ├── pt-PT.json        # Português Portugal
+│   │   ├── en.json           # English
+│   │   ├── es.json           # Español
+│   │   ├── fr.json           # Français
+│   │   ├── de.json           # Deutsch
+│   │   └── it.json           # Italiano
+│   └── images/logos/          # Logos das empresas
+├── advanced-features.js       # Recursos avançados
+├── enhanced-styles.css        # Estilos aprimorados
 ├── auto-commit.bat           # Script de commit automático (Windows)
 ├── auto-commit.ps1           # Script de commit automático (PowerShell)
 └── README.md                 # Este arquivo
 ```
 
-## 📚 Documentação
+## 📚 Documentação e Site
 
-Para informações detalhadas sobre o sistema, consulte a pasta `docs/`:
+O site completo e toda documentação estão organizados na pasta `docs/`:
 
+- **[🏠 Site Principal](docs/indexfinalcopy.html)** - Site completo multilíngue
+- **[🧪 Página de Teste](docs/test-translation.html)** - Teste do sistema de tradução
 - **[📖 Documentação Completa](docs/README.md)** - Índice geral da documentação
 - **[🌍 Sistema de Tradução](docs/COMO_USAR_TRADUCAO.md)** - Guia completo do sistema multilíngue
 - **[🚀 Deploy no GitHub](docs/GITHUB_DEPLOYMENT.md)** - Instruções para publicação
