@@ -16,6 +16,9 @@
   const dictionaries = {
     "pt-PT": {
       "hero.title": "Factorial Finance!",
+      "hero.subtitle": "Soluções para Mitigação de Riscos Fiscais e Laborais",
+      "hero.start_experience": "🚀 Começar sua Experiência",
+      "hero.start_description": "Clique no botão quando para descobrir nas soluções da Factorial RH",
       "lang.label": "Idioma",
       "country.label": "País",
       "lang.pt-BR": "Português (BR)",
@@ -127,6 +130,9 @@
     },
     "en": {
       "hero.title": "Factorial Finance!",
+      "hero.subtitle": "Solutions for Fiscal and Labor Risk Mitigation",
+      "hero.start_experience": "🚀 Start Your Experience",
+      "hero.start_description": "Click the button to discover Factorial HR solutions",
       "lang.label": "Language",
       "country.label": "Country",
       "lang.pt-BR": "Portuguese (BR)",
@@ -237,7 +243,10 @@
       "footer.compliance": "In compliance with GDPR"
     },
     "es": {
-      "hero.title": "¡Factorial Finance en España!",
+      "hero.title": "¡Factorial Finance!",
+      "hero.subtitle": "Soluciones para Mitigación de Riesgos Fiscales y Laborales",
+      "hero.start_experience": "🚀 Comenzar tu Experiencia",
+      "hero.start_description": "Haz clic en el botón para descubrir las soluciones de Factorial RH",
       "lang.label": "Idioma",
       "country.label": "País",
       "lang.pt-BR": "Portugués (BR)",
@@ -349,6 +358,9 @@
     },
     "fr": {
       "hero.title": "Factorial Finance!",
+      "hero.subtitle": "Solutions pour l'Atténuation des Risques Fiscaux et du Travail",
+      "hero.start_experience": "🚀 Commencer votre Expérience",
+      "hero.start_description": "Cliquez sur le bouton pour découvrir les solutions Factorial RH",
       "lang.label": "Langue",
       "country.label": "Pays",
       "lang.pt-BR": "Portugais (BR)",
@@ -460,6 +472,9 @@
     },
     "de": {
       "hero.title": "Factorial Finance!",
+      "hero.subtitle": "Lösungen für Steuer- und Arbeitsrisikominderung",
+      "hero.start_experience": "🚀 Ihre Erfahrung beginnen",
+      "hero.start_description": "Klicken Sie auf die Schaltfläche, um Factorial HR-Lösungen zu entdecken",
       "lang.label": "Sprache",
       "country.label": "Land",
       "lang.pt-BR": "Portugiesisch (BR)",
@@ -571,6 +586,9 @@
     },
     "it": {
       "hero.title": "Factorial Finance!",
+      "hero.subtitle": "Soluzioni per la Mitigazione dei Rischi Fiscali e del Lavoro",
+      "hero.start_experience": "🚀 Inizia la tua Esperienza",
+      "hero.start_description": "Clicca sul pulsante per scoprire le soluzioni Factorial HR",
       "lang.label": "Lingua",
       "country.label": "Paese",
       "lang.pt-BR": "Portoghese (BR)",
