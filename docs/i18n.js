@@ -893,27 +893,19 @@
   let currentCountry = defaultCountry;
   let currentLanguage = defaultLang;
 
-  async function loadDictionary(lang) {
-    const safeLang = supportedLanguages.includes(lang) ? lang : defaultLang;
-    
-    // Tenta carregar do arquivo JSON primeiro (para GitHub)
-    try {
-    const res = await fetch(`i18n/${safeLang}.json`);
-      if (res.ok) {
-        const fileDict = await res.json();
-        // Merge com dicionário inline (dicionário inline tem prioridade)
-        return { ...dictionaries[safeLang], ...fileDict };
-      }
-    } catch (e) {
-      console.log("Usando dicionário inline para", safeLang);
-    }
-    
-    // Fallback para dicionário inline
-    return dictionaries[safeLang] || dictionaries[defaultLang];
-  }
 
   async function setLanguage(lang) {
-    const dictionary = await loadDictionary(lang);
+    if (!supportedLanguages.includes(lang)) {
+      console.warn(`Idioma não suportado: ${lang}`);
+      return;
+    }
+    
+    const dictionary = dictionaries[lang];
+    if (!dictionary) {
+      console.warn(`Dicionário não encontrado para: ${lang}`);
+      return;
+    }
+    
     currentLanguage = lang;
     document.documentElement.setAttribute("lang", lang);
     
@@ -923,6 +915,8 @@
       if (dictionary[key]) {
         if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
           el.setAttribute("placeholder", dictionary[key]);
+        } else if (el.tagName === "TITLE") {
+          document.title = dictionary[key];
         } else {
           el.textContent = dictionary[key];
         }
@@ -932,6 +926,8 @@
     localStorage.setItem("lang", lang);
     populateLangOptions(dictionary, lang);
     updateCountrySpecificContent();
+    
+    console.log(`Tradução para ${lang}: ${Object.keys(dictionary).length} textos traduzidos`);
   }
 
   function setCountry(country) {
@@ -1089,8 +1085,18 @@
     currentLanguage = savedLang || browserLang || defaultLang;
     currentCountry = savedCountry || defaultCountry;
     
-    setLanguage(currentLanguage).catch(console.error);
+    // Aplicar tradução inicial
+    setLanguage(currentLanguage);
     setCountry(currentCountry);
+    
+    // Configurar seletor de idioma
+    const langSwitcher = document.getElementById("langSwitcher");
+    if (langSwitcher) {
+      langSwitcher.value = currentLanguage;
+      langSwitcher.addEventListener("change", (e) => {
+        setLanguage(e.target.value);
+      });
+    }
   });
 
   // Expose for manual switching if needed

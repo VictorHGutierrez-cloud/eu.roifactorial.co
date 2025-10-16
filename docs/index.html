@@ -13,8 +13,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
     
-    <!-- Sistema de Tradução Automática -->
-    <script src="auto-translate.js"></script>
     
     <!-- Factorial Font: Fira Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -359,6 +357,18 @@
                         <a href="#integrations" class="nav-link text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium" data-i18n="nav.integrations">Integrations</a>
                         <a href="#success" class="nav-link text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium" data-i18n="nav.success">Success Stories</a>
                     </div>
+                </div>
+                
+                <!-- Language Switcher -->
+                <div class="hidden md:block mr-4">
+                    <select id="langSwitcher" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">
+                        <option value="pt-PT">🇵🇹 PT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                        <option value="fr">🇫🇷 FR</option>
+                        <option value="de">🇩🇪 DE</option>
+                        <option value="it">🇮🇹 IT</option>
+                    </select>
                 </div>
                 
                 <!-- CTA Button -->
@@ -1299,18 +1309,19 @@
                 gsap.registerPlugin(ScrollTrigger);
                 
                 // Garantir que elementos tenham opacidade inicial correta
-                gsap.set('.hero-gradient h1, .hero-gradient p', { opacity: 1 });
+                gsap.set('[data-i18n="hero.title"]', { opacity: 1 });
+                gsap.set('[data-i18n="hero.subtitle"]', { opacity: 1 });
                 gsap.set('.holographic-card', { opacity: 1 });
                 
                 // Enhanced GSAP Animations
-                gsap.from('.hero-gradient h1', {
+                gsap.from('[data-i18n="hero.title"]', {
                     duration: 1.5,
                     y: 50,
                     opacity: 0,
                     ease: 'power2.out'
                 });
                 
-                gsap.from('.hero-gradient p', {
+                gsap.from('[data-i18n="hero.subtitle"]', {
                     duration: 1.5,
                     y: 50,
                     opacity: 0,
