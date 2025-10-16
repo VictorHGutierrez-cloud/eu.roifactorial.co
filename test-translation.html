@@ -4,44 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste de Tradução - Factorial Finance</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="auto-translate.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .controls { background: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .controls select { margin: 0 10px; padding: 5px; }
+        .result { background: #e8f5e8; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+    <script src="i18n.js"></script>
 </head>
-<body class="bg-gray-100 p-8">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-3xl font-bold text-center mb-8">Teste do Sistema de Tradução</h1>
+<body>
+    <h1>🧪 Teste de Sistema de Tradução Universal</h1>
+    
+    <div class="controls">
+        <h3>Controles de Teste:</h3>
+        <label for="countrySwitcher">País:</label>
+        <select id="countrySwitcher">
+            <option value="PT">🇵🇹 Portugal</option>
+            <option value="ES">🇪🇸 España</option>
+            <option value="FR">🇫🇷 France</option>
+            <option value="DE">🇩🇪 Deutschland</option>
+            <option value="IT">🇮🇹 Italia</option>
+        </select>
         
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Textos de Teste</h2>
-            
-            <div class="space-y-4">
-                <p class="text-lg">Quais são os Riscos Fiscais e Laborais Mais Comuns?</p>
-                <p class="text-lg">E quais são as penalizações do sistema fiscal português? Vamos ver!</p>
-                <p class="text-lg">Transforme a Gestão Financeira da Sua Empresa</p>
-                <p class="text-lg">A solução completa para compliance fiscal, gestão de despesas e relatórios financeiros em Portugal.</p>
-                <p class="text-lg">Agendar Demonstração</p>
-                <p class="text-lg">Ver Preços</p>
-                <p class="text-lg">Por que escolher a Factorial Finance?</p>
-                <p class="text-lg">Compliance Fiscal Automatizado</p>
-                <p class="text-lg">Gestão Inteligente de Despesas</p>
-                <p class="text-lg">Relatórios Financeiros Avançados</p>
-            </div>
-        </div>
-        
-        <div class="bg-blue-50 rounded-lg p-6">
-            <h3 class="text-xl font-semibold mb-4">Instruções:</h3>
-            <ol class="list-decimal list-inside space-y-2">
-                <li>Clique nos botões de idioma no canto superior direito</li>
-                <li>Observe como os textos mudam instantaneamente</li>
-                <li>Verifique se o texto "Quais são os Riscos Fiscais e Laborais Mais Comuns?" é traduzido</li>
-                <li>Abra o console do navegador (F12) para ver quantos textos foram traduzidos</li>
-                <li>Clique no botão 💾 para baixar os arquivos de tradução</li>
-            </ol>
-        </div>
-        
-        <div class="mt-6 text-center">
-            <p class="text-gray-600">Se os textos não mudarem, verifique o console para erros</p>
+        <label for="langSwitcher">Idioma:</label>
+        <select id="langSwitcher">
+            <option value="pt-PT">Português (PT)</option>
+            <option value="pt-BR">Português (BR)</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+        </select>
+    </div>
+
+    <div class="test-section">
+        <h2>Teste de Tradução de Textos</h2>
+        <p><strong>Título do Hero:</strong> <span data-i18n="hero.title">Carregando...</span></p>
+        <p><strong>Subtítulo:</strong> <span data-i18n="section1.subtitle">Carregando...</span></p>
+        <p><strong>Calculadora:</strong> <span data-i18n="calculator.title">Carregando...</span> <span data-i18n="calculator.subtitle">Carregando...</span></p>
+    </div>
+
+    <div class="test-section">
+        <h2>Teste de Dados por País</h2>
+        <div id="country-data">
+            <p><strong>País Atual:</strong> <span id="current-country">Carregando...</span></p>
+            <p><strong>Taxas de IVA:</strong></p>
+            <div id="vat-rates-display">Carregando...</div>
+            <p><strong>Limites de Isenção:</strong></p>
+            <div id="exemption-limits-display">Carregando...</div>
         </div>
     </div>
+
+    <div class="test-section">
+        <h2>Teste de Riscos Fiscais</h2>
+        <div id="risks-display">Carregando...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Informações de Debug</h2>
+        <div id="debug-info">
+            <p><strong>País Selecionado:</strong> <span id="debug-country">-</span></p>
+            <p><strong>Idioma Selecionado:</strong> <span id="debug-language">-</span></p>
+            <p><strong>Dados do País:</strong> <span id="debug-country-data">-</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para atualizar informações de debug
+        function updateDebugInfo() {
+            document.getElementById('debug-country').textContent = window.currentCountry || 'N/A';
+            document.getElementById('debug-language').textContent = window.currentLanguage || 'N/A';
+            
+            if (window.countryData && window.currentCountry) {
+                const countryInfo = window.countryData[window.currentCountry];
+                document.getElementById('debug-country-data').textContent = JSON.stringify(countryInfo, null, 2);
+            }
+        }
+
+        // Função para atualizar dados específicos do país
+        function updateCountrySpecificData() {
+            if (!window.countryData || !window.currentCountry) return;
+            
+            const countryInfo = window.countryData[window.currentCountry];
+            
+            // Atualizar país atual
+            document.getElementById('current-country').textContent = `${countryInfo.flag} ${countryInfo.name}`;
+            
+            // Atualizar taxas de IVA
+            const vatRatesHtml = countryInfo.regions.map(region => 
+                `<div class="result">
+                    <strong>${region.name}:</strong> 
+                    Normal: ${region.normal}% | 
+                    Intermédia: ${region.intermediate}% | 
+                    Reduzida: ${region.reduced}%
+                </div>`
+            ).join('');
+            document.getElementById('vat-rates-display').innerHTML = vatRatesHtml;
+            
+            // Atualizar limites de isenção
+            const exemptionHtml = `
+                <div class="result">
+                    <strong>Alimentação Diária:</strong> 
+                    Dinheiro: €${countryInfo.exemptionLimits.dailyAllowance.cash} | 
+                    Cartão: €${countryInfo.exemptionLimits.dailyAllowance.card}
+                </div>
+                <div class="result">
+                    <strong>Quilometragem:</strong> €${countryInfo.exemptionLimits.mileage}/km
+                </div>
+            `;
+            document.getElementById('exemption-limits-display').innerHTML = exemptionHtml;
+            
+            // Atualizar riscos fiscais
+            const risksHtml = countryInfo.risks.map(risk => 
+                `<div class="result" style="border-left: 4px solid ${risk.color};">
+                    <strong>${risk.title}:</strong> ${risk.description}
+                </div>`
+            ).join('');
+            document.getElementById('risks-display').innerHTML = risksHtml;
+        }
+
+        // Override das funções do i18n.js para adicionar debug
+        const originalSetLanguage = window.setLanguage;
+        const originalSetCountry = window.setCountry;
+
+        window.setLanguage = function(lang) {
+            originalSetLanguage(lang);
+            updateDebugInfo();
+            updateCountrySpecificData();
+        };
+
+        window.setCountry = function(country) {
+            originalSetCountry(country);
+            updateDebugInfo();
+            updateCountrySpecificData();
+        };
+
+        // Inicializar quando a página carregar
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                updateDebugInfo();
+                updateCountrySpecificData();
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

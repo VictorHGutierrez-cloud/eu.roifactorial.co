@@ -287,428 +287,22 @@
             75% { transform: translateY(-15px) rotate(2deg); }
         }
     </style>
-    <script>
-        // i18n inline para funcionar localmente e no GitHub
-        (() => {
-            const supported = ["pt-BR", "pt-PT", "en", "es", "fr", "de", "it"];
-            const defaultLang = "pt-PT";
-            
-            // Dicionários inline para funcionar sem servidor
-            const dictionaries = {
-                "pt-BR": {
-                    "hero.title": "Factorial Finance em Portugal!",
-                    "lang.label": "Idioma",
-                    "lang.pt-BR": "Português (BR)",
-                    "lang.pt-PT": "Português (PT)",
-                    "lang.en": "Inglês",
-                    "lang.es": "Espanhol",
-                    "lang.fr": "Francês",
-                    "lang.de": "Alemão",
-                    "lang.it": "Italiano",
-                    "meta.title": "Factorial Finance | Plataforma de Compliance Fiscal para Portugal",
-                    "nav.brand": "Factorial Finance",
-                    "nav.home": "Home",
-                    "nav.bundles": "Bundles",
-                    "nav.calculator": "Calculadora ROI",
-                    "nav.compliance": "Compliance",
-                    "nav.integrations": "Integrações",
-                    "nav.success": "Cases de Sucesso",
-                    "nav.demo": "Agendar Demo",
-                    "mobile.menu": "Menu",
-                    "hero.calculate": "🧮 Calcular Economia",
-                    "hero.case": "▶️ Case de Sucesso em Portugal",
-                    "section1.title": "Como a Factorial apoia na Mitigação de Riscos Fiscais e Laborais",
-                    "section1.subtitle": "Elimine o risco de Tributação Autónoma e otimize a gestão financeira em minutos!",
-                    "feature1.title": "Gestão de Projetos",
-                    "feature1.desc": "Transforme a gestão de projetos para decisões ágeis e eficientes",
-                    "feature1.item1": "Organize e faça gestão completa de projetos e subprojetos",
-                    "feature1.item2": "Associe tempo e despesas; monitorize horas e custos por colaborador",
-                    "feature1.item3": "Defina gestor/diretor do projeto, prazos, orçamento e divisas (Enterprise)",
-                    "feature1.item4": "Insights na visão geral de projetos; API para integrações",
-                    "feature2.title": "Despesas",
-                    "feature2.desc": "Centralize e acompanhe despesas com fluxos de aprovação e OCR",
-                    "feature2.item1": "Acompanhamento de despesas em tempo real; insights e relatórios",
-                    "feature2.item2": "Leitura inteligente (OCR) e fluxos de aprovação com múltiplas etapas",
-                    "feature2.item3": "Políticas ilimitadas, múltiplas aprovações e regras automáticas (Enterprise)",
-                    "feature2.item4": "Reembolso via Recibo de Vencimento; subcategorias/IVA/centros de custo",
-                    "feature3.title": "Gestão de Softwares",
-                    "feature3.desc": "Controle de custos de SaaS, aprovações e relatórios",
-                    "feature3.item1": "Notificações de renovação, painel e relatórios de custos",
-                    "feature3.item2": "Fluxos de aprovação e pagamentos de subscrições SaaS",
-                    "feature3.item3": "Monitorização de uso, exportações e alertas de revogação de acesso",
-                    "feature4.title": "Requisições de compra",
-                    "feature4.desc": "Controle de gastos com processos de aprovação guiados",
-                    "feature4.item1": "Centralize todas as requisições; exporte e organize fornecedores",
-                    "feature4.item2": "Construa fluxos de aprovação específicos por tipo de pedido",
-                    "feature4.item3": "Cartões de utilização única para requisições e processamento de faturas",
-                    "calculator.title": "💰 CALCULADORA",
-                    "calculator.subtitle": "DE POUPANÇAS",
-                    "calculator.description": "Calcule quanto pode poupar eliminando riscos fiscais e laborais com a Factorial",
-                    "calculator.company_data": "Dados da Sua Empresa",
-                    "calculator.savings": "Suas Poupanças Potenciais",
-                    "calculator.employees": "Colaboradores que submetem despesas",
-                    "calculator.approvers": "Aprovadores (gestores / controlo financeiro)",
-                    "calculator.industry": "Setor de Atividade",
-                    "calculator.industry.services": "Serviços (1.0)",
-                    "calculator.industry.manufacturing": "Indústria (1.3)",
-                    "calculator.industry.technology": "Tecnologia (0.9)",
-                    "calculator.industry.retail": "Retalho (1.1)",
-                    "calculator.industry.healthcare": "Saúde (1.2)",
-                    "calculator.transactions": "Transações de despesas (mês)",
-                    "calculator.time_per_tx": "Tempo manual por transação (min)",
-                    "calculator.hourly_cost": "Custo médio por hora (€)",
-                    "calculator.error_value": "Valor médio por erro (€)",
-                    "calculator.total_employees": "Total de colaboradores (Core obrigatório)",
-                    "calculator.core_note": "Core é por colaborador ativo (obrigatório para todos).",
-                    "calculator.expense_users": "Utilizadores de Despesas (total)",
-                    "calculator.project_seats": "Seats em Projetos (Project Management)",
-                    "calculator.procurement": "Procurement (AP + Compras)",
-                    "calculator.invoicing": "Faturamento de Vendas",
-                    "calculator.calculate": "Calcular Poupanças"
-                },
-                "pt-PT": {
-                    "hero.title": "Factorial Finance em Portugal!",
-                    "lang.label": "Idioma",
-                    "lang.pt-BR": "Português (BR)",
-                    "lang.pt-PT": "Português (PT)",
-                    "lang.en": "Inglês",
-                    "lang.es": "Espanhol",
-                    "lang.fr": "Francês",
-                    "lang.de": "Alemão",
-                    "lang.it": "Italiano",
-                    "meta.title": "Factorial Finance | Plataforma de Compliance Fiscal para Portugal",
-                    "nav.brand": "Factorial Finance",
-                    "nav.home": "Home",
-                    "nav.bundles": "Bundles",
-                    "nav.calculator": "Calculadora ROI",
-                    "nav.compliance": "Compliance",
-                    "nav.integrations": "Integrações",
-                    "nav.success": "Cases de Sucesso",
-                    "nav.demo": "Agendar Demo",
-                    "mobile.menu": "Menu",
-                    "hero.calculate": "🧮 Calcular Economia",
-                    "hero.case": "▶️ Case de Sucesso em Portugal",
-                    "section1.title": "Como a Factorial apoia na Mitigação de Riscos Fiscais e Laborais",
-                    "section1.subtitle": "Elimine o risco de Tributação Autónoma e otimize a gestão financeira em minutos!",
-                    "feature1.title": "Gestão de Projetos",
-                    "feature1.desc": "Transforme a gestão de projetos para decisões ágeis e eficientes",
-                    "feature1.item1": "Organize e faça gestão completa de projetos e subprojetos",
-                    "feature1.item2": "Associe tempo e despesas; monitorize horas e custos por colaborador",
-                    "feature1.item3": "Defina gestor/diretor do projeto, prazos, orçamento e divisas (Enterprise)",
-                    "feature1.item4": "Insights na visão geral de projetos; API para integrações",
-                    "feature2.title": "Despesas",
-                    "feature2.desc": "Centralize e acompanhe despesas com fluxos de aprovação e OCR",
-                    "feature2.item1": "Acompanhamento de despesas em tempo real; insights e relatórios",
-                    "feature2.item2": "Leitura inteligente (OCR) e fluxos de aprovação com múltiplas etapas",
-                    "feature2.item3": "Políticas ilimitadas, múltiplas aprovações e regras automáticas (Enterprise)",
-                    "feature2.item4": "Reembolso via Recibo de Vencimento; subcategorias/IVA/centros de custo",
-                    "feature3.title": "Gestão de Softwares",
-                    "feature3.desc": "Controle de custos de SaaS, aprovações e relatórios",
-                    "feature3.item1": "Notificações de renovação, painel e relatórios de custos",
-                    "feature3.item2": "Fluxos de aprovação e pagamentos de subscrições SaaS",
-                    "feature3.item3": "Monitorização de uso, exportações e alertas de revogação de acesso",
-                    "feature4.title": "Requisições de compra",
-                    "feature4.desc": "Controle de gastos com processos de aprovação guiados",
-                    "feature4.item1": "Centralize todas as requisições; exporte e organize fornecedores",
-                    "feature4.item2": "Construa fluxos de aprovação específicos por tipo de pedido",
-                    "feature4.item3": "Cartões de utilização única para requisições e processamento de faturas",
-                    "calculator.title": "💰 CALCULADORA",
-                    "calculator.subtitle": "DE POUPANÇAS",
-                    "calculator.description": "Calcule quanto pode poupar eliminando riscos fiscais e laborais com a Factorial",
-                    "calculator.company_data": "Dados da Sua Empresa",
-                    "calculator.savings": "Suas Poupanças Potenciais",
-                    "calculator.employees": "Colaboradores que submetem despesas",
-                    "calculator.approvers": "Aprovadores (gestores / controlo financeiro)",
-                    "calculator.industry": "Setor de Atividade",
-                    "calculator.industry.services": "Serviços (1.0)",
-                    "calculator.industry.manufacturing": "Indústria (1.3)",
-                    "calculator.industry.technology": "Tecnologia (0.9)",
-                    "calculator.industry.retail": "Retalho (1.1)",
-                    "calculator.industry.healthcare": "Saúde (1.2)",
-                    "calculator.transactions": "Transações de despesas (mês)",
-                    "calculator.time_per_tx": "Tempo manual por transação (min)",
-                    "calculator.hourly_cost": "Custo médio por hora (€)",
-                    "calculator.error_value": "Valor médio por erro (€)",
-                    "calculator.total_employees": "Total de colaboradores (Core obrigatório)",
-                    "calculator.core_note": "Core é por colaborador ativo (obrigatório para todos).",
-                    "calculator.expense_users": "Utilizadores de Despesas (total)",
-                    "calculator.project_seats": "Seats em Projetos (Project Management)",
-                    "calculator.procurement": "Procurement (AP + Compras)",
-                    "calculator.invoicing": "Faturamento de Vendas",
-                    "calculator.calculate": "Calcular Poupanças"
-                },
-                "en": {
-                    "hero.title": "Factorial Finance in Portugal!",
-                    "lang.label": "Language",
-                    "lang.pt-BR": "Portuguese (BR)",
-                    "lang.pt-PT": "Portuguese (PT)",
-                    "lang.en": "English",
-                    "lang.es": "Spanish",
-                    "lang.fr": "French",
-                    "lang.de": "German",
-                    "lang.it": "Italian",
-                    "meta.title": "Factorial Finance | Fiscal Compliance Platform for Portugal",
-                    "nav.brand": "Factorial Finance",
-                    "nav.home": "Home",
-                    "nav.bundles": "Bundles",
-                    "nav.calculator": "ROI Calculator",
-                    "nav.compliance": "Compliance",
-                    "nav.integrations": "Integrations",
-                    "nav.success": "Success Stories",
-                    "nav.demo": "Schedule Demo",
-                    "mobile.menu": "Menu",
-                    "hero.calculate": "🧮 Calculate Savings",
-                    "hero.case": "▶️ Success Case in Portugal",
-                    "section1.title": "How Factorial Supports Fiscal and Labor Risk Mitigation",
-                    "section1.subtitle": "Eliminate Autonomous Taxation risk and optimize financial management in minutes!",
-                    "feature1.title": "Project Management",
-                    "feature1.desc": "Transform project management for agile and efficient decisions",
-                    "feature1.item1": "Organize and manage complete projects and subprojects",
-                    "feature1.item2": "Associate time and expenses; monitor hours and costs per employee",
-                    "feature1.item3": "Define project manager/director, deadlines, budget and currencies (Enterprise)",
-                    "feature1.item4": "Insights in project overview; API for integrations",
-                    "feature2.title": "Expenses",
-                    "feature2.desc": "Centralize and track expenses with approval flows and OCR",
-                    "feature2.item1": "Real-time expense tracking; insights and reports",
-                    "feature2.item2": "Intelligent reading (OCR) and multi-step approval flows",
-                    "feature2.item3": "Unlimited policies, multiple approvals and automatic rules (Enterprise)",
-                    "feature2.item4": "Reimbursement via Payslip; subcategories/VAT/cost centers",
-                    "feature3.title": "Software Management",
-                    "feature3.desc": "SaaS cost control, approvals and reports",
-                    "feature3.item1": "Renewal notifications, dashboard and cost reports",
-                    "feature3.item2": "Approval flows and SaaS subscription payments",
-                    "feature3.item3": "Usage monitoring, exports and access revocation alerts",
-                    "feature4.title": "Purchase requisitions",
-                    "feature4.desc": "Expense control with guided approval processes",
-                    "feature4.item1": "Centralize all requisitions; export and organize suppliers",
-                    "feature4.item2": "Build specific approval flows by request type",
-                    "feature4.item3": "Single-use cards for requisitions and invoice processing",
-                    "calculator.title": "💰 SAVINGS",
-                    "calculator.subtitle": "CALCULATOR",
-                    "calculator.description": "Calculate how much you can save by eliminating fiscal and labor risks with Factorial",
-                    "calculator.company_data": "Your Company Data",
-                    "calculator.savings": "Your Potential Savings",
-                    "calculator.employees": "Employees who submit expenses",
-                    "calculator.approvers": "Approvers (managers / financial control)",
-                    "calculator.industry": "Industry Sector",
-                    "calculator.industry.services": "Services (1.0)",
-                    "calculator.industry.manufacturing": "Manufacturing (1.3)",
-                    "calculator.industry.technology": "Technology (0.9)",
-                    "calculator.industry.retail": "Retail (1.1)",
-                    "calculator.industry.healthcare": "Healthcare (1.2)",
-                    "calculator.transactions": "Expense transactions (month)",
-                    "calculator.time_per_tx": "Manual time per transaction (min)",
-                    "calculator.hourly_cost": "Average cost per hour (€)",
-                    "calculator.error_value": "Average value per error (€)",
-                    "calculator.total_employees": "Total employees (Core required)",
-                    "calculator.core_note": "Core is per active employee (required for all).",
-                    "calculator.expense_users": "Expense Users (total)",
-                    "calculator.project_seats": "Project Management Seats",
-                    "calculator.procurement": "Procurement (AP + Purchases)",
-                    "calculator.invoicing": "Sales Invoicing",
-                    "calculator.calculate": "Calculate Savings"
-                },
-                "es": {
-                    "hero.title": "¡Factorial Finance en Portugal!",
-                    "lang.label": "Idioma",
-                    "lang.pt-BR": "Portugués (BR)",
-                    "lang.pt-PT": "Portugués (PT)",
-                    "lang.en": "Inglés",
-                    "lang.es": "Español",
-                    "lang.fr": "Francés",
-                    "lang.de": "Alemán",
-                    "lang.it": "Italiano",
-                    "meta.title": "Factorial Finance | Plataforma de Cumplimiento Fiscal para Portugal",
-                    "nav.brand": "Factorial Finance",
-                    "nav.home": "Inicio",
-                    "nav.bundles": "Paquetes",
-                    "nav.calculator": "Calculadora ROI",
-                    "nav.compliance": "Cumplimiento",
-                    "nav.integrations": "Integraciones",
-                    "nav.success": "Casos de Éxito",
-                    "nav.demo": "Programar Demo",
-                    "mobile.menu": "Menú",
-                    "hero.calculate": "🧮 Calcular Ahorros",
-                    "hero.case": "▶️ Caso de Éxito en Portugal",
-                    "section1.title": "Cómo Factorial Apoya en la Mitigación de Riesgos Fiscales y Laborales",
-                    "section1.subtitle": "¡Elimine el riesgo de Tributación Autónoma y optimice la gestión financiera en minutos!",
-                    "feature1.title": "Gestión de Proyectos",
-                    "feature1.desc": "Transforme la gestión de proyectos para decisiones ágiles y eficientes",
-                    "feature1.item1": "Organice y gestione proyectos completos y subproyectos",
-                    "feature1.item2": "Asocie tiempo y gastos; monitoree horas y costos por empleado",
-                    "feature1.item3": "Defina gestor/director del proyecto, plazos, presupuesto y divisas (Enterprise)",
-                    "feature1.item4": "Insights en la visión general de proyectos; API para integraciones",
-                    "feature2.title": "Gastos",
-                    "feature2.desc": "Centralice y rastree gastos con flujos de aprobación y OCR",
-                    "feature2.item1": "Seguimiento de gastos en tiempo real; insights e informes",
-                    "feature2.item2": "Lectura inteligente (OCR) y flujos de aprobación multi-etapa",
-                    "feature2.item3": "Políticas ilimitadas, múltiples aprobaciones y reglas automáticas (Enterprise)",
-                    "feature2.item4": "Reembolso vía Recibo de Salario; subcategorías/IVA/centros de costo",
-                    "feature3.title": "Gestión de Software",
-                    "feature3.desc": "Control de costos SaaS, aprobaciones e informes",
-                    "feature3.item1": "Notificaciones de renovación, panel e informes de costos",
-                    "feature3.item2": "Flujos de aprobación y pagos de suscripciones SaaS",
-                    "feature3.item3": "Monitoreo de uso, exportaciones y alertas de revocación de acceso",
-                    "feature4.title": "Requisiciones de compra",
-                    "feature4.desc": "Control de gastos con procesos de aprobación guiados",
-                    "feature4.item1": "Centralice todas las requisiciones; exporte y organice proveedores",
-                    "feature4.item2": "Construya flujos de aprobación específicos por tipo de solicitud",
-                    "feature4.item3": "Tarjetas de uso único para requisiciones y procesamiento de facturas",
-                    "calculator.title": "💰 CALCULADORA",
-                    "calculator.subtitle": "DE AHORROS",
-                    "calculator.description": "Calcule cuánto puede ahorrar eliminando riesgos fiscales y laborales con Factorial",
-                    "calculator.company_data": "Datos de Su Empresa",
-                    "calculator.savings": "Sus Ahorros Potenciales",
-                    "calculator.employees": "Empleados que envían gastos",
-                    "calculator.approvers": "Aprobadores (gerentes / control financiero)",
-                    "calculator.industry": "Sector de Actividad",
-                    "calculator.industry.services": "Servicios (1.0)",
-                    "calculator.industry.manufacturing": "Industria (1.3)",
-                    "calculator.industry.technology": "Tecnología (0.9)",
-                    "calculator.industry.retail": "Retail (1.1)",
-                    "calculator.industry.healthcare": "Salud (1.2)",
-                    "calculator.transactions": "Transacciones de gastos (mes)",
-                    "calculator.time_per_tx": "Tiempo manual por transacción (min)",
-                    "calculator.hourly_cost": "Costo promedio por hora (€)",
-                    "calculator.error_value": "Valor promedio por error (€)",
-                    "calculator.total_employees": "Total de empleados (Core requerido)",
-                    "calculator.core_note": "Core es por empleado activo (requerido para todos).",
-                    "calculator.expense_users": "Usuarios de Gastos (total)",
-                    "calculator.project_seats": "Asientos de Gestión de Proyectos",
-                    "calculator.procurement": "Procurement (AP + Compras)",
-                    "calculator.invoicing": "Facturación de Ventas",
-                    "calculator.calculate": "Calcular Ahorros"
-                },
-                "fr": {
-                    "hero.title": "Factorial Finance au Portugal !",
-                    "lang.label": "Langue",
-                    "lang.pt-BR": "Portugais (BR)",
-                    "lang.pt-PT": "Portugais (PT)",
-                    "lang.en": "Anglais",
-                    "lang.es": "Espagnol",
-                    "lang.fr": "Français",
-                    "lang.de": "Allemand",
-                    "lang.it": "Italien",
-                    "section1.title": "Comment Factorial soutient la Mitigation des Risques Fiscaux et du Travail",
-                    "section1.subtitle": "Éliminez le risque de Taxation Autonome et optimisez la gestion financière en minutes !",
-                    "feature4.title": "Demandes d'achat",
-                    "feature4.desc": "Contrôle des dépenses avec processus d'approbation guidés",
-                    "calculator.company_data": "Données de Votre Entreprise",
-                    "calculator.savings": "Vos Économies Potentielles"
-                },
-                "de": {
-                    "hero.title": "Factorial Finance in Portugal!",
-                    "lang.label": "Sprache",
-                    "lang.pt-BR": "Portugiesisch (BR)",
-                    "lang.pt-PT": "Portugiesisch (PT)",
-                    "lang.en": "Englisch",
-                    "lang.es": "Spanisch",
-                    "lang.fr": "Französisch",
-                    "lang.de": "Deutsch",
-                    "lang.it": "Italienisch",
-                    "section1.title": "Wie Factorial bei der Minderung von Steuer- und Arbeitsrisiken unterstützt",
-                    "section1.subtitle": "Eliminieren Sie das Risiko der autonomen Besteuerung und optimieren Sie das Finanzmanagement in Minuten!",
-                    "feature4.title": "Kaufanfragen",
-                    "feature4.desc": "Ausgabenkontrolle mit geführten Genehmigungsprozessen",
-                    "calculator.company_data": "Ihre Unternehmensdaten",
-                    "calculator.savings": "Ihre potenziellen Einsparungen"
-                },
-                "it": {
-                    "hero.title": "Factorial Finance in Portogallo!",
-                    "lang.label": "Lingua",
-                    "lang.pt-BR": "Portoghese (BR)",
-                    "lang.pt-PT": "Portoghese (PT)",
-                    "lang.en": "Inglese",
-                    "lang.es": "Spagnolo",
-                    "lang.fr": "Francese",
-                    "lang.de": "Tedesco",
-                    "lang.it": "Italiano",
-                    "section1.title": "Come Factorial supporta la Mitigazione dei Rischi Fiscali e del Lavoro",
-                    "section1.subtitle": "Elimina il rischio di Tassazione Autonoma e ottimizza la gestione finanziaria in minuti!",
-                    "feature4.title": "Richieste di acquisto",
-                    "feature4.desc": "Controllo delle spese con processi di approvazione guidati",
-                    "calculator.company_data": "Dati della Vostra Azienda",
-                    "calculator.savings": "I Vostri Risparmi Potenziali"
-                }
-            };
-
-            async function loadDictionary(lang) {
-                const safeLang = supported.includes(lang) ? lang : defaultLang;
-                
-                // Tenta carregar do arquivo JSON primeiro (para GitHub)
-                try {
-                    const res = await fetch(`i18n/${safeLang}.json`);
-                    if (res.ok) {
-                        return await res.json();
-                    }
-                } catch (e) {
-                    console.log("Usando dicionário inline para", safeLang);
-                }
-                
-                // Fallback para dicionário inline
-                return dictionaries[safeLang] || dictionaries[defaultLang];
-            }
-
-            async function setLanguage(lang) {
-                const dictionary = await loadDictionary(lang);
-                document.documentElement.setAttribute("lang", lang);
-                document.querySelectorAll("[data-i18n]").forEach((el) => {
-                    const key = el.getAttribute("data-i18n");
-                    if (dictionary[key]) {
-                        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-                            el.setAttribute("placeholder", dictionary[key]);
-                        } else {
-                            el.textContent = dictionary[key];
-                        }
-                    }
-                });
-                localStorage.setItem("lang", lang);
-                populateLangOptions(dictionary, lang);
-            }
-
-            function populateLangOptions(dict, current) {
-                const select = document.getElementById("langSwitcher");
-                if (!select) return;
-                
-                // Build options once
-                if (!select.dataset.bound) {
-                    select.innerHTML = "";
-                    const options = [
-                        { value: "pt-BR", label: dict["lang.pt-BR"] || "Português (BR)" },
-                        { value: "pt-PT", label: dict["lang.pt-PT"] || "Português (PT)" },
-                        { value: "en", label: dict["lang.en"] || "English" },
-                        { value: "es", label: dict["lang.es"] || "Español" },
-                        { value: "fr", label: dict["lang.fr"] || "Français" },
-                        { value: "de", label: dict["lang.de"] || "Deutsch" },
-                        { value: "it", label: dict["lang.it"] || "Italiano" }
-                    ];
-                    options.forEach(({ value, label }) => {
-                        const opt = document.createElement("option");
-                        opt.value = value;
-                        opt.textContent = label;
-                        select.appendChild(opt);
-                    });
-                    select.dataset.bound = "true";
-                    select.addEventListener("change", (e) => setLanguage(e.target.value));
-                }
-                select.value = current;
-            }
-
-            // Initialize
-            window.addEventListener("DOMContentLoaded", () => {
-                const saved = localStorage.getItem("lang");
-                const browserLang = navigator.language?.substring(0, 2) === "pt" ? "pt-PT" : "en";
-                setLanguage(saved || browserLang || defaultLang).catch(console.error);
-            });
-
-            // Expose for manual switching if needed
-            window.setLanguage = setLanguage;
-        })();
-    </script>
+    <!-- Sistema de tradução será carregado do arquivo i18n.js -->
 </head>
 <body class="bg-gray-50">
-    <!-- Language Switcher -->
-    <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+    <!-- Language and Country Switchers -->
+    <div style="position: fixed; top: 20px; left: 20px; z-index: 1000; display: flex; gap: 10px; flex-wrap: wrap;">
+        <div>
+            <label for="countrySwitcher" data-i18n="country.label" style="margin-right: 8px; background: rgba(255,255,255,0.6); padding: 6px 10px; border-radius: 8px;">País</label>
+            <select id="countrySwitcher" style="padding: 6px 10px; border-radius: 8px;">
+                <option value="PT">🇵🇹 Portugal</option>
+                <option value="ES">🇪🇸 España</option>
+                <option value="FR">🇫🇷 France</option>
+                <option value="DE">🇩🇪 Deutschland</option>
+                <option value="IT">🇮🇹 Italia</option>
+            </select>
+        </div>
+        <div>
         <label for="langSwitcher" data-i18n="lang.label" style="margin-right: 8px; background: rgba(255,255,255,0.6); padding: 6px 10px; border-radius: 8px;">Idioma</label>
         <select id="langSwitcher" style="padding: 6px 10px; border-radius: 8px;">
             <option value="pt-PT">Português (PT)</option>
@@ -719,6 +313,7 @@
             <option value="de">Deutsch</option>
             <option value="it">Italiano</option>
         </select>
+        </div>
     </div>
     <!-- Dark Mode Toggle -->
     <div class="dark-mode-toggle" onclick="toggleDarkMode()">
@@ -1221,105 +816,14 @@
                 </p>
             </div>
             
-            <!-- Risk Mitigation Cards -->
-            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Tributação Autónoma -->
-                <div class="bg-white rounded-2xl p-8 shadow-xl border-l-8" style="border-left-color: #FF355E;">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-4" style="background-color: rgba(255, 53, 94, 0.1);">
-                            <span class="text-3xl">💥</span>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2" style="color: #FF355E;">Tributação Autónoma</h3>
-                            <p class="text-sm text-gray-500">Risco de 50–70% sobre despesas não documentadas</p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="p-4 rounded-lg" style="background-color: rgba(255, 53, 94, 0.05);">
-                            <h4 class="font-bold mb-2" style="color: #CC1A3A;">❌ SEM FACTORIAL:</h4>
-                            <ul class="text-sm space-y-1" style="color: #B91C3C;">
-                                <li>• Despesas não documentadas = Tributação Autónoma de 50%</li>
-                                <li>• Em caso de prejuízo = 70%</li>
-                                <li>• Multas da AT por documentação deficiente</li>
-                            </ul>
-                        </div>
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <h4 class="font-bold text-green-800 mb-2">✅ COM FACTORIAL:</h4>
-                            <ul class="text-sm text-green-700 space-y-1">
-                                <li>• OCR obriga validação documental</li>
-                                <li>• Fluxos de aprovação eliminam despesas informais</li>
-                                <li>• Risco de Tributação Autónoma eliminado</li>
-                            </ul>
-                        </div>
-                    </div>
+            <!-- Risk Mitigation Cards - Dynamic based on country -->
+            <div id="fiscal-risks-container" class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Cards will be populated dynamically by JavaScript -->
                 </div>
 
-                <!-- Multas ACT -->
-                <div class="bg-white rounded-2xl p-8 shadow-xl border-l-8 border-orange-500">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-3xl">⏰</span>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-orange-600 mb-2">Multas ACT</h3>
-                            <p class="text-sm text-gray-500">Registo de tempo obrigatório por lei</p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="bg-orange-50 p-4 rounded-lg">
-                            <h4 class="font-bold text-orange-800 mb-2">❌ SEM FACTORIAL:</h4>
-                            <ul class="text-sm text-orange-700 space-y-1">
-                                <li>• Registo manual suscetível de manipulação</li>
-                                <li>• Multas pesadas da ACT</li>
-                                <li>• Dados não auditáveis por 5 anos</li>
-                            </ul>
-                        </div>
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <h4 class="font-bold text-green-800 mb-2">✅ COM FACTORIAL:</h4>
-                            <ul class="text-sm text-green-700 space-y-1">
-                                <li>• Registo fidedigno e imutável</li>
-                                <li>• Conformidade total com ACT</li>
-                                <li>• Audit trail automático por 5 anos</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Perda Isenção TSU -->
-                <div class="bg-white rounded-2xl p-8 shadow-xl border-l-8 border-purple-500">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-3xl">💰</span>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-purple-600 mb-2">Isenção TSU / IRS</h3>
-                            <p class="text-sm text-gray-500">Ajudas de custo e quilometragens com limite legal</p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="bg-purple-50 p-4 rounded-lg">
-                            <h4 class="font-bold text-purple-800 mb-2">❌ SEM FACTORIAL:</h4>
-                            <ul class="text-sm text-purple-700 space-y-1">
-                                <li>• Ajudas de custo > 10,20€/dia = IRS + TSU</li>
-                                <li>• Quilometragem > 0,40€/km = IRS + TSU</li>
-                                <li>• Custos adicionais não previstos</li>
-                            </ul>
-                        </div>
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <h4 class="font-bold text-green-800 mb-2">✅ COM FACTORIAL:</h4>
-                            <ul class="text-sm text-green-700 space-y-1">
-                                <li>• Políticas automáticas respeitam limites legais</li>
-                                <li>• Máxima isenção fiscal garantida</li>
-                                <li>• Integração direta no recibo de vencimento</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Taxas de IVA Regionais -->
+            <!-- Taxas de IVA Regionais - Dynamic based on country -->
             <div class="bg-white rounded-2xl p-8 shadow-xl mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Taxas de IVA por Região Portuguesa (2025)</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-i18n="compliance.vat_rates.title">Taxas de IVA por Região Portuguesa (2025)</h3>
                 <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 text-center">
                     <p class="text-green-800 font-semibold">✅ Resultado: Conformidade total, risco fiscal eliminado e eficiência documental comprovada.</p>
                 </div>
@@ -1333,25 +837,8 @@
                                 <th class="border border-gray-300 px-4 py-3 text-center font-bold">Taxa Reduzida</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="border border-gray-300 px-4 py-3 font-semibold">Portugal Continental</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center font-bold" style="color: #FF355E;">23%</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center text-orange-600 font-bold">13%</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center text-green-600 font-bold">6%</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="border border-gray-300 px-4 py-3 font-semibold">Região Autónoma da Madeira</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center font-bold" style="color: #FF355E;">22%</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center text-orange-600 font-bold">12%</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center text-green-600 font-bold">5%</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 px-4 py-3 font-semibold">Região Autónoma dos Açores</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center font-bold" style="color: #FF355E;">16%</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center text-orange-600 font-bold">9%</td>
-                                <td class="border border-gray-300 px-4 py-3 text-center text-green-600 font-bold">4%</td>
-                            </tr>
+                        <tbody id="vat-rates-table">
+                            <!-- Table rows will be populated dynamically by JavaScript -->
                         </tbody>
                     </table>
                 </div>
@@ -1360,29 +847,29 @@
                 </p>
             </div>
 
-            <!-- Limites de Isenção -->
+            <!-- Limites de Isenção - Dynamic based on country -->
             <div class="bg-white rounded-2xl p-8 shadow-xl">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Limites de Isenção TSU/IRS</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-i18n="compliance.exemption_limits.title">Limites de Isenção TSU/IRS</h3>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-green-50 p-6 rounded-lg">
-                        <h4 class="text-lg font-bold text-green-800 mb-4">Alimentação Diária</h4>
+                        <h4 class="text-lg font-bold text-green-800 mb-4" data-i18n="compliance.daily_allowance">Alimentação Diária</h4>
                         <div class="space-y-2">
                             <div class="flex justify-between">
-                                <span class="text-gray-700">Em Dinheiro:</span>
-                                <span class="font-bold text-green-600">6,00€/dia</span>
+                                <span class="text-gray-700" data-i18n="compliance.cash">Em Dinheiro:</span>
+                                <span class="font-bold text-green-600" id="daily-allowance-cash">6,00€/dia</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-700">Cartão/Vale:</span>
-                                <span class="font-bold text-green-600">10,20€/dia</span>
+                                <span class="text-gray-700" data-i18n="compliance.card">Cartão/Vale:</span>
+                                <span class="font-bold text-green-600" id="daily-allowance-card">10,20€/dia</span>
                             </div>
                         </div>
                     </div>
                     <div class="bg-blue-50 p-6 rounded-lg">
-                        <h4 class="text-lg font-bold text-blue-800 mb-4">Quilometragem</h4>
+                        <h4 class="text-lg font-bold text-blue-800 mb-4" data-i18n="compliance.mileage">Quilometragem</h4>
                         <div class="space-y-2">
                             <div class="flex justify-between">
-                                <span class="text-gray-700">Veículo Próprio:</span>
-                                <span class="font-bold text-blue-600">0,40€/km</span>
+                                <span class="text-gray-700" data-i18n="compliance.own_vehicle">Veículo Próprio:</span>
+                                <span class="font-bold text-blue-600" id="mileage-rate">0,40€/km</span>
                             </div>
                             <div class="text-sm text-gray-600 mt-2">
                                 A Factorial controla automaticamente estes limites
