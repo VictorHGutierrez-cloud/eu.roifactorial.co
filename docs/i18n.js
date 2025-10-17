@@ -1241,13 +1241,12 @@
     if (!select.dataset.bound) {
       select.innerHTML = "";
       const options = [
-        { value: "pt-BR", label: dict["lang.pt-BR"] || "Português (BR)" },
-        { value: "pt-PT", label: dict["lang.pt-PT"] || "Português (PT)" },
-        { value: "en", label: dict["lang.en"] || "English" },
-        { value: "es", label: dict["lang.es"] || "Español" },
-        { value: "fr", label: dict["lang.fr"] || "Français" },
-        { value: "de", label: dict["lang.de"] || "Deutsch" },
-        { value: "it", label: dict["lang.it"] || "Italiano" }
+        { value: "pt-PT", label: "🇵🇹 Portuguese" },
+        { value: "en", label: "🇺🇸 English" },
+        { value: "es", label: "🇪🇸 Spanish" },
+        { value: "fr", label: "🇫🇷 French" },
+        { value: "de", label: "🇩🇪 German" },
+        { value: "it", label: "🇮🇹 Italian" }
       ];
       options.forEach(({ value, label }) => {
         const opt = document.createElement("option");
